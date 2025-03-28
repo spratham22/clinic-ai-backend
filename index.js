@@ -7,7 +7,7 @@ const app = express();
 app.use(express.json());
 
 // Initialize Firebase
-const serviceAccount = require("./firebase_credentials.json"); // Upload this file in Replit
+const serviceAccount = JSON.parse(process.env.FIREBASE_CREDENTIALS); // Upload this file in Replit
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
 });
